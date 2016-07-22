@@ -25,6 +25,11 @@ run server:
 
     $ curl -X DELETE 'http://localhost:9292/api/v1/bird/{id}' -H Content-Type:application/json -v
 
-## TODO
 
-Add tests
+Where {id} is the bird id that we have in our database.
+
+## Running tests
+
+For test, run the following:
+
+    $ rspec
