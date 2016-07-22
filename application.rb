@@ -3,10 +3,12 @@ require 'grape'
 require 'grape-rabl'
 require 'mongoid'
 
-API_ENV ||= 'development'
-mongoid_config_path = File.expand_path('../config/mongoid.yml', __FILE__)
+ENV['API_ENV'] ||= 'development'
+ENV['API_ROOT'] = Dir.pwd
 
-Mongoid.load!(mongoid_config_path, API_ENV)
+mongoid_config_path = File.join(ENV['API_ROOT'], 'config', 'mongoid.yml')
+
+Mongoid.load!(mongoid_config_path, ENV['API_ENV'])
 
 # Load files from the models and api folders
 $:.unshift File.dirname(__FILE__)

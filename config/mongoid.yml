@@ -1,6 +1,13 @@
 development:
   clients:
     default:
-      database: bird_registery
+      database: bird_registery_development
+      hosts:
+        - localhost:27017
+
+test:
+  clients:
+    default:
+      database: bird_registery_test
       hosts:
         - localhost:27017
